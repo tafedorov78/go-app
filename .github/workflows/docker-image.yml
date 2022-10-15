@@ -15,7 +15,7 @@ jobs:
     steps:
     - uses: actions/checkout@v3
     - name: Build the Docker image
-      run: docker build . --file Dockerfile --tag go-web-app:$(date +%s)
+      run: docker build . --file Dockerfile --tag go-web-app
     
     - name: Install doctl
       uses: digitalocean/action-doctl@v2
@@ -25,8 +25,8 @@ jobs:
     - name: Log in to DigitalOcean Container Registry
       run: doctl registry login
 
-    - name: Tag
-      run: docker tag go-web-app:1665866821 registry.digitalocean.com/go-app-artem/go-web-app
+    - name: Tag images
+      run: docker tag go-web-app registry.digitalocean.com/go-app-artem/go-web-app
 
 
     - name: Push image to DigitalOcean Container Registry
