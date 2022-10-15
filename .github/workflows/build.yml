@@ -6,6 +6,12 @@ on:
   pull_request:
     branches: [ "main" ]
 
+
+env:
+  REGISTRY: "registry.digitalocean.com/go-app-artem"
+  IMAGE_NAME: "go-web-app"
+  CONTAINER_NAME: "go-web-app"
+
 jobs:
 
   build:
