@@ -25,5 +25,9 @@ jobs:
     - name: Log in to DigitalOcean Container Registry
       run: doctl registry login
 
+    - name: Tag
+      run: docker tag go-web-app:1665866821 registry.digitalocean.com/go-app-artem/go-web-app
+
+
     - name: Push image to DigitalOcean Container Registry
       run: docker push registry.digitalocean.com/go-app-artem/go-web-app
